@@ -1,0 +1,67 @@
+{
+  "name": "vidler",
+  "version": "1.0.0",
+  "private": true,
+  "main": "electron.js",
+  "description": "Video Uploading Necessity",
+  "author": "Grozur",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build-front": "vite build",
+    "start": "electron .",
+    "build": "npm run build-front && USE_SYSTEM_7ZA=true electron-builder --linux --win"
+  },
+  "dependencies": {
+    "@heroicons/react": "^1.0.6",
+    "@tailwindcss/postcss": "^4.0.15",
+    "axios": "^1.8.4",
+    "cloudinary": "^2.6.0",
+    "cloudinary-video-player": "^2.3.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.4.0",
+    "react-video-js-player": "^1.1.1",
+    "tailwind": "^4.0.0",
+    "video.js": "^8.22.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.2.0"
+  },
+  "build": {
+    
+    "appId": "com.vidler.app",
+    "productName": "Vidler",
+  "asar": true,
+    "files": [
+      "electron.js",
+      "front/dist/**/*",
+      "back/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+    "target": ["AppImage"]
+  }
+  }
+}
